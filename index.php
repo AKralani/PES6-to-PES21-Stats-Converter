@@ -89,13 +89,47 @@ $conn = null; // Close the database connection
 <html>
 <head>
     <title>Data Import and CSV Download</title>
+	<style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        textarea {
+            width: 100%;
+            resize: vertical;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #008CBA;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <form method="POST" action="">
-        <label for="data1">Data for pes6 (comma separated):</label><br>
+        <label for="data1">Data (Player Stats) for PES 6 (comma separated):</label><br>
         <textarea name="data1" id="data1" rows="5" cols="50"><?php echo $_POST['data1'] ?? ''; ?></textarea><br><br>
 
-        <label for="data2">Data for pes2021 (semicolon separated):</label><br>
+        <label for="data2">Data (Player Stats) for PES 2021 (semicolon separated):</label><br>
         <textarea name="data2" id="data2" rows="5" cols="50"><?php echo $_POST['data2'] ?? ''; ?></textarea><br><br>
 
         <input type="submit" name="submit1" value="Insert into pes6">
