@@ -19,8 +19,7 @@ try {
         ['table' => 'pes2021', 'columns' => ['PhysicalContact', 'Balance']],
         ['table' => 'pes6', 'columns' => ['STAMINA', 'DEFENSE']],
         ['table' => 'pes2021', 'columns' => ['BallWinning', 'Aggression']],
-        ['table' => 'pes6', 'columns' => ['GOAL_KEEPING']],
-        ['table' => 'pes2021', 'columns' => ['GKCatching', 'GKClearing', 'GKReflexes', 'GKReach', 'WeakFootUsage', 'WeakFootAcc', 'Form', 'InjuryResistance', 'Reputation', 'PlayingAttitude', 'Trickster', 'MazingRun', 'SpeedingBullet', 'IncisiveRun', 'LongBallExpert', 'EarlyCross', 'LongRanger', 'ScissorsFeint', 'DoubleTouch', 'FlipFlap', 'MarseilleTurn', 'Sombrero', 'CrossOverTurn', 'CutBehindAndTurn', 'ScotchMove', 'StepOnSkillcontrol', 'HeadingSpecial', 'LongRangeDrive', 'Chipshotcontrol', 'LongRangeShot', 'KnuckleShot', 'DippingShots', 'RisingShots', 'AcrobaticFinishing', 'HeelTrick', 'FirstTimeShot', 'OneTouchPass', 'ThroughPassing', 'WeightedPass', 'PinpointCrossing', 'OutsideCurler', 'Rabona', 'NoLookPass', 'LowLoftedPass', 'GKLowPunt', 'GKHighPunt', 'LongThrow', 'GKLongThrow', 'PenaltySpecialist', 'GKPenaltySaver', 'Gamesmanship', 'ManMarking', 'TrackBack', 'Interception', 'AcrobaticClear', 'Captaincy', 'SuperSub', 'FightingSpirit', 'Celebration1', 'Celebration2', 'DribblingHunching', 'DribblingArmMove', 'RunningHunching', 'RunningArmMovement', 'CornerKicks', 'FreeKicks', 'PenaltyKick', 'DribbleMotion', 'YouthClub', 'OwnerClub', 'ContractUntil', 'LoanUntil', 'MarketValue', 'NationalCaps', 'Legend', 'Hand', 'WinnerGoldenBall', 'EditName', 'EditBasics', 'EditPosition', 'EditPositions', 'EditAbilities', 'EditPlayerSkills', 'EditPlayingStyle', 'EditCOMPlayingStyles', 'EditMovements', 'Edit1', 'Edit2', 'Edit3', 'Edit4', 'Edit5', 'Edit6', 'Edit7', 'Value1', 'Value2', 'Value3', 'Value2020_1', 'Value2020_2', 'Appearance', 'ListBoots', 'ListGloves', 'InEditFile', 'OverallStats']]
+        ['table' => 'pes2021', 'columns' => ['GKAwareness', 'GKCatching', 'GKClearing', 'GKReflexes', 'GKReach', 'WeakFootUsage', 'WeakFootAcc', 'Form', 'InjuryResistance', 'Reputation', 'PlayingAttitude', 'Trickster', 'MazingRun', 'SpeedingBullet', 'IncisiveRun', 'LongBallExpert', 'EarlyCross', 'LongRanger', 'ScissorsFeint', 'DoubleTouch', 'FlipFlap', 'MarseilleTurn', 'Sombrero', 'CrossOverTurn', 'CutBehindAndTurn', 'ScotchMove', 'StepOnSkillcontrol', 'HeadingSpecial', 'LongRangeDrive', 'Chipshotcontrol', 'LongRangeShot', 'KnuckleShot', 'DippingShots', 'RisingShots', 'AcrobaticFinishing', 'HeelTrick', 'FirstTimeShot', 'OneTouchPass', 'ThroughPassing', 'WeightedPass', 'PinpointCrossing', 'OutsideCurler', 'Rabona', 'NoLookPass', 'LowLoftedPass', 'GKLowPunt', 'GKHighPunt', 'LongThrow', 'GKLongThrow', 'PenaltySpecialist', 'GKPenaltySaver', 'Gamesmanship', 'ManMarking', 'TrackBack', 'Interception', 'AcrobaticClear', 'Captaincy', 'SuperSub', 'FightingSpirit', 'Celebration1', 'Celebration2', 'DribblingHunching', 'DribblingArmMove', 'RunningHunching', 'RunningArmMovement', 'CornerKicks', 'FreeKicks', 'PenaltyKick', 'DribbleMotion', 'YouthClub', 'OwnerClub', 'ContractUntil', 'LoanUntil', 'MarketValue', 'NationalCaps', 'Legend', 'Hand', 'WinnerGoldenBall', 'EditName', 'EditBasics', 'EditPosition', 'EditPositions', 'EditAbilities', 'EditPlayerSkills', 'EditPlayingStyle', 'EditCOMPlayingStyles', 'EditMovements', 'Edit1', 'Edit2', 'Edit3', 'Edit4', 'Edit5', 'Edit6', 'Edit7', 'Value1', 'Value2', 'Value3', 'Value2020_1', 'Value2020_2', 'Appearance', 'ListBoots', 'ListGloves', 'InEditFile', 'OverallStats']]
     ];
 
     // Generate CSV content
@@ -339,16 +338,6 @@ try {
             } else if (isset($row['DEFENSE']) && $row['DEFENSE'] === 96 || $row['DEFENSE'] === 97 || $row['DEFENSE'] === 98 || $row['DEFENSE'] === 99) {
                 // Modify the value to x in the fetched row
                 $row['DEFENSE'] = $row['DEFENSE'] - 4;
-            }
-
-            // Check if the "GOAL_KEEPING" column exists and is lesser than 40
-            if (isset($row['GOAL_KEEPING']) && $row['GOAL_KEEPING'] < 40) {
-                // Modify the value to x in the fetched row
-                $row['GOAL_KEEPING'] = 40;
-            // Check if the "GOAL_KEEPING" column exists and is equal to x
-            } else {
-                // Modify the value to x in the fetched row
-                $row['GOAL_KEEPING'] = $row['GOAL_KEEPING'];
             }
         }
 
