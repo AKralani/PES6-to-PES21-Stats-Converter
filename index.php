@@ -134,13 +134,18 @@ $conn = null; // Close the database connection
 
         <input type="submit" name="submit1" value="Insert into pes6">
         <input type="submit" name="submit2" value="Insert into pes2021">
-        
     </form>
-    <button onclick="downloadCSV()">Download CSV</button>
-
+    <button onclick="downloadCSV()">Download CSV for Player</button>
+    <button onclick="downloadCSVGK()">Download CSV for Goalkeeper</button>
+    <button onclick="document.location='merge.php'">Merge Files</button>
         <script>
             function downloadCSV() {
                 window.location.href = 'download.php';
+            }
+        </script>
+        <script>
+            function downloadCSVGK() {
+                window.location.href = 'download-gk.php';
             }
         </script>
 </body>
